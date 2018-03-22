@@ -20,7 +20,12 @@
 	</style>
 </head>
 <body>
-	<p>Player 1: Chris</p>
+	<p id="test" class="test3">Player 1: Chris</p>
+	<div> Hey
+		<span id="test" class="test">Player 2: A</span>
+		<span id="test2" class="test">Player 3: B</span>
+	</div>
+	
 	<script type="text/javascript">
 	
 	//returns the first element matching id=test
@@ -38,7 +43,11 @@
 	}
 
 	var div = document.querySelector('div');
-	//console.log("text: "+ div.textContent);
+
+	//returns the text of the entire element
+	console.log("text: "+ div.textContent);
+
+	//innerHTML returns the entire HTML markup
 	console.log("innerHTML: "+ div.innerHTML);
 	div.innerHTML = '<span>Testing</span>';
 	console.log("div: "+ div.textContent);
