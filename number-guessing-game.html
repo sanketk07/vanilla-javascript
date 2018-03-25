@@ -40,6 +40,8 @@
 
     <script>
     function checkGuess() {
+
+      //pass the value through the built-in Number() method, just to make sure the value is definitely a number
       var userGuess = Number(guessField.value);
       if (guessCount === 1) {
         guesses.textContent = 'Previous guesses: ';
