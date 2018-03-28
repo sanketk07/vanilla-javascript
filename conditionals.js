@@ -80,3 +80,29 @@ function setWeather() {
       para.textContent = '';
   }
 }
+
+//Ternary operator
+var greeting = ( isBirthday ) ? 'Happy birthday Mrs. Smith — we hope you have a great day!' : 'Good morning Mrs. Smith.';
+
+//HTML for below code
+<label for="theme">Select theme: </label>
+<select id="theme">
+  <option value="white">White</option>
+  <option value="black">Black</option>
+</select>
+
+<h1>This is my website</h1>
+
+////Script
+var select = document.querySelector('select');
+var html = document.querySelector('html');
+document.body.style.padding = '10px';
+
+function update(bgColor, textColor) {
+  html.style.backgroundColor = bgColor;
+  html.style.color = textColor;
+}
+
+select.onchange = function() {
+  ( select.value === 'black' ) ? update('black','white') : update('white','black');
+}
