@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select All - jQuery</title>
+	<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<table>
+	<tr>
+		<td><input type="checkbox" /> Toggle All<br/></td>
+		<td>Header Text</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="foo" value="bar1"> Column 1 </td>
+		<td>Text 1</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="foo" value="bar2"> Column 2 </td>
+		<td>Text 2</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="foo" value="bar3"> Column 3 </td>
+		<td>Text 3</td>
+	</tr>
+
+</table>
+
+<script type="text/javascript">
+	$("#checkAll").change(function () {
+		//console.log("hi"+$(this).parent);
+    $("input:checkbox").prop('checked', $(this).prop("checked"));
+});
+</script>
+</body>
+</html>
