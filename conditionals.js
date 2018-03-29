@@ -137,7 +137,6 @@ case 'psychedelic':
   update('psychedelic', 'white');
   break;
 
-
 default:
   update('#f5f9fa', 'black');
 }
@@ -147,3 +146,19 @@ function update(bgColor, textColor) {
   html.style.backgroundColor = bgColor;
   html.style.color = textColor;
 }
+
+
+//for loops
+var cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
+var info = 'My cats are called ';
+var para = document.querySelector('p');
+
+for (var i = 0; i < cats.length; i++) {
+  if (i === cats.length - 1) {
+    info += 'and ' + cats[i] + '.';
+  } else {
+    info += cats[i] + ', ';
+  }
+}
+
+para.textContent = info;
