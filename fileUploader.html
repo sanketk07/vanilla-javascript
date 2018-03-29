@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Uploader</title>
+	<style type="text/css">
+		#draghere{
+  width:300px;
+  height:100px;
+  background-color:rgba(221,214,155,0.4);
+  border:1px dashed black;
+  text-align:center;
+}
+	</style>
+</head>
+<body>
+
+<input type="file" id="file" name="files[]" onchange="startRead()" multiple  /> 
+<div id='file-list-display'></div>
+<!-- 
+<div id="draghere" >Drop files here</div> -->
+
+<script type="text/javascript">
+	
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+alert("File API supported.!");
+} else {
+alert('The File APIs are not fully supported in this browser.');
+}
+
+
+  
+function startRead(evt) {
+    var fileInput= document.getElementById('file');
+    var fileList =[];
+  
+    for(var i=0;i<fileInput.files.length;i++)
+    {
+    fileList.push(fileInput.files[i]);
+     
+    }
+    alert("length of filelist: "+ fileList.length);
+    renderFileList(fileList);
+   
+    
+   /*  
+    if (file) {
+        //  getAsText(file);
+        alert("Name: " + file.name + "\n" + "Last Modified Date :" + file.lastModifiedDate);
+        
+        
+        
+    } */
+} 
+
+
+
+  function renderFileList (fileList) {
+  var fileListDisplay = document.getElementById('file-list-display');
+  	fileListDisplay.innerHTML = '';
+    fileList.forEach(function (file, index) {
+    	var fileDisplayEl = document.createElement('p');
+      fileDisplayEl.innerHTML = (index + 1) + ': ' + file.name + ', '+file.lastModifiedDate;
+      fileListDisplay.appendChild(fileDisplayEl);
+    });
+  }
+
+/* function startReadFromDrag(evt) {
+    var file = evt.dataTransfer.files[0];
+    if (file) {
+        //  getAsText(file);
+        var fileAttr = "Name: " + file.name + "\n" + "Last Modified Date :" + file.lastModifiedDate;
+        $('#draghere').text(fileAttr);
+        alert(fileAttr);
+
+    }
+    evt.stopPropagation();
+    evt.preventDefault();
+}
+var dropingDiv = document.getElementById('draghere');
+dropingDiv.addEventListener('dragover', domagic, false);
+dropingDiv.addEventListener('drop', startReadFromDrag, false);
+ */
+
+
+</script>
+</body>
+</html>
