@@ -1,0 +1,33 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+
+<button onclick="playVideo()" type="button">Play Video</button>
+<button onclick="pauseVideo()" type="button">Pause Video</button><br>  
+
+<!-- Setting height and width prevents screen flickering while video load/play -->
+<!-- controls provides the control options (play, pause, volume, full-screen, download) and autoplay plays videos on page load--> 
+<!-- LinkedIn videos feature - Controls on hover, autoplay videos on load -->
+<video width="320" height="176" controls autoplay>
+  <source src="rabbit320.mp4" type="video/mp4">
+
+  <!-- Shown if the browser does not support Video tag -->
+  <p>Your browser does not support HTML5 video.</p>
+</video>
+
+<script> 
+var vid = document.querySelector("video"); 
+
+function playVideo() { 
+    vid.play(); 
+} 
+
+function pauseVideo() { 
+    vid.pause(); 
+} 
+
+
+</script> 
+
+</body> 
+</html>
