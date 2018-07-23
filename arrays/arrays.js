@@ -120,3 +120,48 @@ arr[0] = "hi";
 console.log(arr)
 
 
+// Array.prototype.filter() - creates a new array with all elements that pass the test implemented by the provided function 
+//does NOT mutate the array on which it is called
+var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+const result = words.filter(word => word.length < 6);
+console.log(result); // Array ["spray", "limit", "elite"]
+
+
+// Array.prototype.find() - returns the value of the first element that satisfies the provided testing function. UNDEFINED otherwise
+var arr = [7, 15, 18, 76, 23];
+var found = arr.find(element => element > 18);
+console.log(found); // 76
+var found2 = arr.find(element => element > 180);
+console.log(found2); // undefined
+
+const fruits = [{name: 'apples', quantity: 2},{name: 'bananas', quantity: 0},{name: 'cherries', quantity: 5}];
+const result = fruits.find( fruit => fruit.name === 'cherries' );
+console.log(result) // { name: 'cherries', quantity: 5 }
+
+function isPrimeNumber(element, index, array) {
+  var start = 2;
+  while (start <= Math.sqrt(element)) {
+    if (element % start++ < 1) {
+      return false;
+    }
+  }
+  return element > 1;
+}
+console.log([4, 6, 8, 12].find(isPrimeNumber)); // undefined, as none found
+console.log([4, 5, 8, 12].find(isPrimeNumber)); // 5
+
+
+// Array.prototype.findIndex() - returns the index of the first element that satisfies the provided testing function. -1 otherwise
+var array1 = [5, 12, 8, 130, 44];
+function findFirstLargeNumber(element) {
+  return element > 13;
+}
+console.log(array1.findIndex(findFirstLargeNumber)); // 3
+
+const fruits = ["apple", "banana", "cantaloupe", "blueberries", "grapefruit"];
+const index = fruits.findIndex(fruit => fruit === "blueberries");
+console.log(index); // 3
+console.log(fruits[index]); // blueberries
+
+
+
