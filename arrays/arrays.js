@@ -164,4 +164,32 @@ console.log(index); // 3
 console.log(fruits[index]); // blueberries
 
 
+// Array.prototype.flat() - creates a new array with all sub-array elements concatted into it recursively up to the specified depth
+var arr1 = [1, 2, [3, 4]];
+console.log(arr1.flat()); // Array [1, 2, 3, 4]
+var arr2 = [1, 2, [3, 4, [5, 6]]];
+console.log(arr2.flat()); // Array [1, 2, 3, 4, [5, 6]]
+var arr3 = [1, 2, [3, 4, [5, 6]]];
+console.log(arr3.flat(2)); // Array [1, 2, 3, 4, 5, 6]
+var arr4 = [1, 2, , 4, 5];
+console.log(arr4.flat()); // Array [1, 2, 4, 5]
+
+
+// Array.prototype.flatMap() - first maps each element using a mapping function, then flattens the result into a new array. 
+//Identical to a map followed by a flat of depth 1
+var arr1 = [1, 2, 3, 4];
+console.log(arr1.map(x => [x * 2])); // Array [[2], [4], [6], [8]]
+console.log(arr1.flatMap(x => [x * 2])); // Array [2, 4, 6, 8]
+
+
+// Array.prototype.forEach()
+var arr = ['a', 'b', 'c'];
+arr.forEach(function(element) {
+  console.log(element);
+});
+// "a"
+// "b"
+// "c"
+
+
 
