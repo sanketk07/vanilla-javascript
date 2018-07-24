@@ -247,6 +247,51 @@ plants.pop();
 console.log(plants); // Array ["broccoli", "cauliflower", "cabbage"]
 
 
+// Array.prototype.push() - adds one or more elements to the end of an array and returns the new length of the array
+var animals = ['pigs', 'goats', 'sheep'];
+console.log(animals.push('cows')); // 4
+console.log(animals); // Array ["pigs", "goats", "sheep", "cows"]
+
+
+// Array.prototype.reduce() - applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value
+const arr = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue; 
+
+// 1 + 2 + 3 + 4
+console.log(arr.reduce(reducer)); // 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(arr.reduce(reducer, 5)); // 15
+
+
+// Array.prototype.reduceRight() - applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value
+const arr = [[0, 1], [2, 3], [4, 5]].reduceRight(
+  (previousValue, currentValue) => previousValue.concat(currentValue)
+);
+console.log(arr); // Array [4, 5, 2, 3, 0, 1]
+
+
+// Array.prototype.reverse() - reverses an array in place. The first array element becomes the last, and the last array element becomes the first
+var arr = ['one', 'two', 'three'];
+console.log('arr: ', arr); // Array ['one', 'two', 'three']
+
+var reversed = arr.reverse(); 
+console.log('reversed: ', reversed); // Array ['three', 'two', 'one']
+
+// It also changes the original array
+console.log('arr: ', arr); // Array ['three', 'two', 'one']
+
+
+// Array.prototype.shift() - removes the first element from an array and returns that removed element. This method changes the length of the array
+var arr = [1, 2, 3];
+var firstElement = arr.shift();
+console.log(arr); // Array [2, 3]
+console.log(firstElement); // 1
+
+
+// Array.prototype.unshift() - 
+
+
 
 
 
