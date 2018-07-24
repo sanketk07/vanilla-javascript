@@ -289,7 +289,82 @@ console.log(arr); // Array [2, 3]
 console.log(firstElement); // 1
 
 
-// Array.prototype.unshift() - 
+// Array.prototype.unshift() - adds one or more elements to the beginning of an array and returns the new length of the array
+var arr = [1, 2, 3];
+console.log(arr.unshift(4, 5)); // 5
+console.log(arr); // Array [4, 5, 1, 2, 3]
+
+
+// Array.prototype.slice() - returns a shallow copy of a portion of an array into a new array object from begin to end (end not included)
+// The original array will not be modified.
+var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+console.log(animals.slice(2)); // Array ["camel", "duck", "elephant"]
+console.log(animals.slice(2, 4)); // Array ["camel", "duck"]
+console.log(animals.slice(1, 5)); // Array ["bison", "camel", "duck", "elephant"]
+
+
+// Array.prototype.some() - tests whether at least one element in the array passes the test implemented by the provided function
+var array = [1, 2, 3, 4, 5];
+var even = function(element) {
+  return element % 2 === 0; // checks whether an element is even
+};
+console.log(array.some(even)); // true
+
+
+// Array.prototype.sort() - sorts the elements of an array in place and returns the array. The sort is not necessarily stable
+//The default sort order is according to string Unicode code points
+var months = ['March', 'Jan', 'Feb', 'Dec'];
+months.sort();
+console.log(months); // Array ["Dec", "Feb", "Jan", "March"]
+var array1 = [1, 30, 4, 21];
+array1.sort();
+console.log(array1); // Array [1, 21, 30, 4]
+
+
+// Array.prototype.splice(start, deleteCount, items) - changes the contents of an array by removing existing elements and/or adding new elements
+// If deleteCount is omitted, or if its value is larger than (array.length - start), then all of the elements from start through the end of the array will be deleted
+// If deleteCount is 0 or negative, no elements are removed
+var months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb'); // inserts at 1st index position
+console.log(months); // Array ['Jan', 'Feb', 'March', 'April', 'June']
+months.splice(4, 1, 'May'); // replaces 1 element at 4th index
+console.log(months); // Array ['Jan', 'Feb', 'March', 'April', 'May']
+
+
+// Array.prototype.toLocaleString() - returns a string representing the elements of the array
+// The elements are converted to Strings using their toLocaleString methods and 
+//these Strings are separated by a locale-specific String (such as a comma “,”)
+var arr = [1, 'a', new Date('21 Dec 1997 14:12:00 UTC')];
+var localeString = arr.toLocaleString('en', {timeZone: "UTC"});
+console.log(localeString); // "1,a,12/21/1997, 2:12:00 PM",
+// This assumes "en" locale and UTC timezone - results may vary
+
+var prices = ['￥7', 500, 8123, 12]; 
+console.log(prices.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' })); // "￥7,￥500,￥8,123,￥12"
+
+
+// Array.prototype.toString() - returns a string representing the specified array and its elements
+// JavaScript calls the toString method automatically when an array is to be represented as a text value or when an array is referred to in a string concatenation
+var arr = [1, 2, 'a', '1a'];
+console.log(arr.toString()); // "1,2,a,1a"
+
+
+// Array.prototype.values() - returns a new Array Iterator object that contains the values for each index in the array
+const arr = ['a', 'b', 'c'];
+const iterator = arr.values();
+for (const value of iterator) {
+  console.log(value); // "a" "b" "c"
+}
+
+var arr = ['w', 'y', 'k', 'o', 'p']; 
+var iterator = arr.values();
+console.log(iterator.next().value); // w 
+console.log(iterator.next().value); // y 
+console.log(iterator.next().value); // k 
+console.log(iterator.next().value); // o 
+console.log(iterator.next().value); // p
+
+
 
 
 
