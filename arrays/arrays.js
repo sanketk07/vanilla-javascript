@@ -192,4 +192,35 @@ arr.forEach(function(element) {
 // "c"
 
 
+// Array.prototype.includes() - determines whether an array includes a certain element, returning true or false as appropriate
+var arr = [1, 2, 3];
+console.log(arr.includes(2)); // true
+console.log(arr.includes(4)); // false
+[1, 2, 3].includes(2);     // true
+[1, 2, 3].includes(4);     // false
+[1, 2, 3].includes(3, 3);  // false - The second parameter is fromIndex
+[1, 2, 3].includes(3, -1); // true - Negative fromIndex value starts the search from the index of (array.length - fromIndex)
+[1, 2, NaN].includes(NaN); // true
+
+
+// Array.prototype.indexOf() - returns the first index at which an element is found, -1 otherwise
+var beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+console.log(beasts.indexOf('bison')); // 1
+console.log(beasts.indexOf('bison', 2)); // 4 - start from index 2
+console.log(beasts.indexOf('giraffe')); // -1
+
+
+// Array.prototype.join() - joins all elements of an array (or an array-like object) into a string and returns this string
+var elements = ['Fire', 'Wind', 'Rain'];
+console.log(elements.join()); // Fire,Wind,Rain
+console.log(elements.join(''));// FireWindRain
+console.log(elements.join('-'));// Fire-Wind-Rain
+
+
+// Array.prototype.keys() - returns a new Array Iterator object that contains the keys for each index in the array
+var arr = ['a', 'b', 'c'];
+var itr = arr.keys(); 
+for (let key of itr) {
+  console.log(key); // 0 1 2
+}
 
