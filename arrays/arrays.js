@@ -224,3 +224,36 @@ for (let key of itr) {
   console.log(key); // 0 1 2
 }
 
+
+// Array.prototype.lastIndexOf() - returns the last index at which a given element is found, -1 otherwise
+//The array is searched backwards, starting at fromIndex
+var animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
+console.log(animals.lastIndexOf('Dodo')); // 3
+console.log(animals.lastIndexOf('Tiger')); // 1
+
+
+// Array.prototype.map() - creates a new array with the results of calling a provided function on every element in the calling array
+var numbers = [1, 4, 9];
+var roots = numbers.map(Math.sqrt);
+console.log(roots) // Array [1, 2, 3]
+console.log(numbers) // Array [1, 4, 9]
+
+
+// Array.prototype.pop() - removes the last element from an array and returns that element. This method changes the length of the array
+var plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+console.log(plants.pop()); // "tomato"
+console.log(plants); // Array ["broccoli", "cauliflower", "cabbage", "kale"]
+plants.pop();
+console.log(plants); // Array ["broccoli", "cauliflower", "cabbage"]
+
+
+
+
+
+
+
+
+
+
+
+
