@@ -2,7 +2,6 @@
 //*****************************
 
 //Array.prototype
-
 if (!Array.prototype.peek) {
   Array.prototype.peek = function() {
     return this[0];
@@ -10,12 +9,11 @@ if (!Array.prototype.peek) {
 }
 
 //Array.length
-
 var alphabets = ['a', 'b', 'c'];
 console.log(alphabets.length); //3
 
 
-Methods:
+//Methods:
 //*****************************
 
 //Array.isArray() - checks if the passed value is an array
